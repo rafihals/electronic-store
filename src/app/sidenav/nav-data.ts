@@ -21,7 +21,7 @@ export const navbarData: INavbarData[] = [
                     },
                     {
                         routeLink: 'products/android',
-                        label: 'android',
+                        label: 'Android',
                     },
                     {
                         routeLink: 'products/windows',

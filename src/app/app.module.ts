@@ -10,7 +10,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { PagesComponent } from './pages/pages.component';
 import { MediaComponent } from './media/media.component';
-import { SettingsComponent } from './settings/settings.component';
 import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
 
 @NgModule({
@@ -22,7 +21,6 @@ import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
     StatisticsComponent,
     PagesComponent,
     MediaComponent,
-    SettingsComponent,
     SublevelMenuComponent
   ],
   imports: [
