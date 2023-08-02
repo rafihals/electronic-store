@@ -1,1 +1,24 @@
 <h1>Statistics</h1>
+
+<ng-container *ngIf="dataSource.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th *ngFor="let column of displayedColumns">{{ column | titlecase }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of dataSource">
+          <td>{{ data.id }}</td>
+          <td>{{ data.name }}</td>
+          <td>{{ data.email }}</td>
+          <!-- Tambahkan kolom lain sesuai dengan respon API Anda -->
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  
+  <ng-container *ngIf="dataSource.length === 0">
+    <p>Loading data...</p>
+  </ng-container>
+  

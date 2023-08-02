@@ -68,7 +68,8 @@
               "browserTarget": "sidenav-with-multilevel-menu:build:production"
             },
             "development": {
-              "browserTarget": "sidenav-with-multilevel-menu:build:development"
+              "browserTarget": "sidenav-with-multilevel-menu:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-media',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./media.component.scss']
 })
 export class MediaComponent implements OnInit {
-
-  constructor() { }
+  public getJsonValue: any;
+  public displayColumn: string[] = ['id','name','email']
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getData();
   }
-
+  getData() {
+    this.http.get('http://localhost:8080/users').subscribe((data) => {
+      this.getJsonValue = data
+      console.table(data)
+    })
+  }
 }
