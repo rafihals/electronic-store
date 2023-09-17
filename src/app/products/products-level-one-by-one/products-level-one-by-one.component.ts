@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ElectronicService } from 'src/app/z-service/electronic.service';
 
 @Component({
   selector: 'app-products-level-one-by-one',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class ProductsLevelOneByOneComponent {
 
+  product: any;
+  selectedProduct: any;
+
+  constructor(private svc: ElectronicService) { }
+
+  ngOnInit(): void {
+    this.getProduct();
+  }
+
+  getProduct() {
+    this.svc.getProducts().subscribe(product => {
+      this.product = product
+    })
+  }
 }
