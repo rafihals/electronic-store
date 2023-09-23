@@ -12,6 +12,8 @@ import { PagesComponent } from './pages/pages.component';
 import { MediaComponent } from './media/media.component';
 import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

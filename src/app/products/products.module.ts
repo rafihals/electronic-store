@@ -9,7 +9,10 @@ import { ProductsLevelOneByOneComponent } from './products-level-one-by-one/prod
 import { ProductsLevelOneByTwoComponent } from './products-level-one-by-two/products-level-one-by-two.component';
 import { ProductsLevelOneByThreeComponent } from './products-level-one-by-three/products-level-one-by-three.component';
 import { ProductsOthersComponent } from './products-others/products-others.component';
-
+import { MatDatepickerModule, } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -23,7 +26,12 @@ import { ProductsOthersComponent } from './products-others/products-others.compo
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    MatFormFieldModule,
+    MatDatepickerModule,
+    ProductsRoutingModule,
+    MatNativeDateModule,
+    MatInputModule
+
   ]
 })
 export class ProductsModule { }

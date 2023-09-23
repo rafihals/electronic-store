@@ -6,18 +6,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ElectronicService {
-  private apiUrl = 'api/public/api/v1/electronic/macbook'; // Gantilah dengan URL API Anda
+  private apiUrl = 'api/public/api/v1/electronic/macbook';
+  private apiUrlStoreItems = 'http://localhost:3000/item';
 
   constructor(private http: HttpClient) { }
 
   // CREATE
-  createProduct(product: any): Observable<any> {
-    return this.http.post(this.apiUrl, product);
+  createProduct(data: any): Observable<any[]> {
+    return this.http.post<any[]>(this.apiUrlStoreItems, data);
   }
 
   // READ (GET All)
   getProducts(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    return this.http.get<any[]>(this.apiUrlStoreItems);
   }
 
   // READ (GET by ID)
@@ -26,12 +27,12 @@ export class ElectronicService {
   }
 
   // UPDATE (PUT)
-  updateProduct(id: number, product: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, product);
+  updateProduct(id: number, data: any): Observable<any> {
+    return this.http.put(`${this.apiUrlStoreItems}/${id}`, data);
   }
 
   // DELETE
   deleteProduct(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete(`${this.apiUrlStoreItems}/${id}`);
   }
 }

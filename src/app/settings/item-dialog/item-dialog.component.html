@@ -1,0 +1,71 @@
+<div mat-dialog-title>
+    <h1>Your Items</h1>
+</div>
+<form [formGroup]="ItemForm" (ngSubmit)="onSubmitItems()">
+
+
+    <div mat-dialog-content>
+        <!-- first rows -->
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Items name</mat-label>
+                <input matInput type="text" placeholder="Iphone X R" formControlName="itemName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="email" formControlName="email">
+            </mat-form-field>
+        </div>
+        <!-- second rows -->
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Price items</mat-label>
+                <input matInput type="number" placeholder="8.000.000" formControlName="price">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="quality">
+                <mat-label><b>Quality</b></mat-label>
+                <mat-radio-button value="Good">Good</mat-radio-button>
+                <mat-radio-button value="Used">Used</mat-radio-button>
+                <mat-radio-button value="Minus">Minus</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>Address</mat-label>
+                <mat-select formControlName="address">
+                    <mat-option *ngFor="let val of addres" [value]="val">
+                        {{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Company</mat-label>
+                <input matInput placeholder="Apple" formControlName="company">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Completeness</mat-label>
+                <input matInput placeholder="Charger, Earphone" formControlName="completeness">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Stock</mat-label>
+                <input matInput placeholder="Limited" formControlName="stock">
+                <mat-hint>required</mat-hint>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions align="end" class="action">
+        <button mat-raised-button mat-dialog-close="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+    </div>
+</form>

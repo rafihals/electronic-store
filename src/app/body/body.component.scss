@@ -10,6 +10,12 @@
     padding: 3rem;
 }
 
+@media (max-width:425px) {
+    .body {
+        padding: 1rem;
+    }
+}
+
 .body-trimmed {
     width: calc(100% - 16.5625rem);
     margin-left: 16.5625rem;

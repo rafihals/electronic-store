@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ElectronicService } from '../z-service/electronic.service';
 
 @Component({
   selector: 'app-media',
@@ -7,17 +7,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./media.component.scss']
 })
 export class MediaComponent implements OnInit {
-  public getJsonValue: any;
-  public displayColumn: string[] = ['id','name','email']
-  constructor(private http: HttpClient) { }
-
+  constructor(private listService: ElectronicService) { }
+  dataList: any;
   ngOnInit(): void {
-    this.getData();
+
   }
-  getData() {
-    this.http.get('http://localhost:8080/users').subscribe((data) => {
-      this.getJsonValue = data
-      console.table(data)
-    })
-  }
+
 }
+

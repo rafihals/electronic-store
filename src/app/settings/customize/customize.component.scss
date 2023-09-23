@@ -1,0 +1,30 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+// .mdc-data-table__table {
+//     min-width: 100%;
+//     border: 0;
+//     white-space: nowrap;
+//     border-spacing: 0;
+//     table-layout: fixed;
+// }
+
+.main-body {
+    margin: 0 auto;
+    padding-top: 20px;
+    max-width: 1248px;
+
+    mat-form-field {
+        width: 100%;
+    }
+}

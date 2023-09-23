@@ -1,1 +1,22 @@
-<p>products-level-one-by-one works!</p>
+<!-- <h1>Invoice</h1> -->
+
+<div class="con">
+    <div class="row">
+
+        <p class="date">Date 01 Aug, 2023</p>
+        <p class="deta">Invoice #INV-23012</p>
+    </div>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate placeholder="Start date">
+            <input matEndDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+
+
+</div>
